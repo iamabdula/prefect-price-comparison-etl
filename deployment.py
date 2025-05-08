@@ -15,7 +15,7 @@ if __name__ == "__main__":
                 "POSTGRES_USER": "admin",
                 "POSTGRES_PASSWORD": "admin",
                 "POSTGRES_DB": "product_ops",
-                "DATABASE_URL": "postgresql://admin:admin@postgres:5432/product_ops"
+                "DATABASE_URL": "postgresql://admin:admin@etl_postgres:5432/product_ops"
             }
         ),
         push=False

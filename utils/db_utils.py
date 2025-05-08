@@ -8,11 +8,15 @@ import uuid
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
-DATABASE_URL = "postgresql://admin:admin@postgres:5432/product_ops"
+DATABASE_URL = "postgresql://admin:admin@etl_postgres:5432/product_ops"
 
 def get_db_engine():
     """Creates and returns a SQLAlchemy engine."""
-    return create_engine(DATABASE_URL)
+    eng = create_engine(DATABASE_URL)
+    with eng.connect() as connection:
+        print('hi')
+    return eng
+
 
 def get_or_create_table(engine):
     """Defines and creates the table if it doesn't exist."""
