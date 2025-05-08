@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:14
+    container_name: etl_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  etl:
+    build:
+      context: .
+      dockerfile: Dockerfile  # The Dockerfile is at the root, not inside a "docker" folder
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - ./data:/app/data   # <-- Add this line
+
+volumes:
+  pgdata:

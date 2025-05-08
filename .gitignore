@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.log
+
+# Prefect cache
+.prefect/
+
+# Environment
+.env
+.venv/
+venv/
+
+# Docker
+*.pid
+*.tar
+
+# VS Code
+.vscode/
+
+# OS generated
+.DS_Store
+Thumbs.db

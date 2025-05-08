@@ -1,0 +1,6 @@
+pandas
+prefect
+sqlalchemy
+psycopg2-binary
+python-dotenv
+boto3
