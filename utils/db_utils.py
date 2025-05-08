@@ -8,7 +8,7 @@ import uuid
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
-DATABASE_URL = "postgresql://admin:admin@postgres:5432/product_ops"
+DATABASE_URL = "postgresql://admin:admin@localhost:5432/product_ops"
 
 def get_db_engine():
     """Creates and returns a SQLAlchemy engine."""
