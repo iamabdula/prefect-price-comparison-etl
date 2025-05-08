@@ -8,8 +8,10 @@ import boto3
 load_dotenv()
 
 # File path for local CSV extraction (for now)
-LOCAL_PATH_BEFORE = os.getenv("LOCAL_PATH_BEFORE")
-LOCAL_PATH_AFTER = os.getenv("LOCAL_PATH_AFTER")
+# LOCAL_PATH_BEFORE = os.getenv("LOCAL_PATH_BEFORE")
+# LOCAL_PATH_AFTER = os.getenv("LOCAL_PATH_AFTER")
+LOCAL_PATH_BEFORE="../data/product_inventory_before.csv"
+LOCAL_PATH_AFTER="../data/product_inventory_after.csv"
 S3_BUCKET_NAME = os.getenv("S3_BUCKET_NAME")  # For future use when switching to S3
 
 

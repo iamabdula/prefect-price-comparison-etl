@@ -1,8 +1,8 @@
 import pandas as pd
 from prefect import flow, task
-from extract import extract_product_data
-from transform import compare_and_create_operations
-from load import load_operations_to_db
+from etl.extract import extract_product_data
+from etl.transform import compare_and_create_operations
+from etl.load import load_operations_to_db
 
 # Prefect task for extraction
 @task
